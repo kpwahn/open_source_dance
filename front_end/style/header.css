@@ -1,0 +1,8 @@
+.headerText {
+  color: red;
+}
+
+.headerElement {
+  max-height: 25px;
+  padding : 10px;
+}
