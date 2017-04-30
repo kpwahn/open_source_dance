@@ -1,0 +1,40 @@
+header {
+  background-color: #35424a;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #e8491d 3px solid;
+}
+
+
+.header-container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+.header-title {
+  float: left;
+  padding: 20px;
+  margin: 20px;
+  color: #e8491d;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+
+.header-elements {
+  color: #ffffff;
+  padding: 35px 20px 20px 20px;
+  margin: 20px;
+  float: right;
+}
+
+.header-userName {
+
+}
+
+.header-phoneNumber {
+
+}
