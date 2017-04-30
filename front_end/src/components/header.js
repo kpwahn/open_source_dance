@@ -24,6 +24,7 @@ class DanceHeader extends Component {
               <img src="/static/images/dance2.jpg" alt />
               <img src="/static/images/dance3.jpg" alt />
               <img src="/static/images/dance4.jpg" alt />
+              <img src="/static/images/dance5.jpg" alt />
             </figure>
           </div>
       </div>
