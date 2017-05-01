@@ -9,15 +9,13 @@ class Highlighter extends Component {
 
   render() {
     return (
-      <div id="slider">
-        <figure>
-          <img src="/static/images/dance1.jpg" alt />
-          <img src="/static/images/dance2.jpg" alt />
-          <img src="/static/images/dance3.jpg" alt />
-          <img src="/static/images/dance4.jpg" alt />
-          <img src="/static/images/dance5.jpg" alt />
-        </figure>
-      </div>
+      <section className="showcase">
+          <p className="imageContent">
+            <span className="contentTitle">Dance Rhythm</span>
+              Dance and let Dance. Welcome to the exiciting exclusive dance community.
+            <a>Know more</a>
+          </p>
+      </section>
     );
   }
 }
