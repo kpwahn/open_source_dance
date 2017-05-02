@@ -1,0 +1,42 @@
+.tileContainer {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-around;
+  background-color: #ffcf00;
+
+}
+
+.tileBox {
+  float: left;
+  width: 30%;
+  text-align: center;
+  margin: 70px 10px;
+  line-height: 30px;
+  letter-spacing: .1px;
+  font-size: 18px;
+  background-color: #ffffff;
+}
+
+
+p {
+  line-height: 30px;
+  letter-spacing: .1px;
+  font-size: 18px;
+}
+
+.tileBox h1 {
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #ffcf00;
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+  transition: 2s;
+  padding: 10px;
+}
+
+.tileBox h1:hover {
+  width: 50%;
+
+}
