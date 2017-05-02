@@ -1,6 +1,6 @@
 var router = require('express').Router();
 
-router.get('/new-user', require('./users/new_user.js'));
+router.post('/create-new-user', require('./users/create_new_user.js'));
 router.get('/delete-user', require('./users/delete_user.js'));
 
 router.get('/', function(req, res) {
