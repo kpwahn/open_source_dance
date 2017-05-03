@@ -8,25 +8,30 @@ module.exports = function (req, res) {
         var password = connection.escape(req.body.password);
 
         // TODO check for duplicates
-        var sql = 'INSERT INTO user_table (email, password) VALUES (' +
-            email + ', ' + password + ');';
+        var sql = 'SELECT * FROM user_table WHERE email = ' + email + ';';
 
         connection.query(sql, function (err, rows, fields) {
             if (err) {
-                console.log("Failed to create new user " + err );
+                // TODO more specific errors
+                console.log('Something went wrong... ' + err );
             } else {
-                console.log('Successfully created user');
+                if( rows.length == 0 ) {
+
+                    sql = 'INSERT INTO user_table (email, password) VALUES (' +
+                        email + ', ' + password + ');';
+
+                    connection.query(sql, function (err, rows, fields) {
+                        if (err) {
+                            console.log('Failed to create new user ' + err );
+                        } else {
+                            console.log('Successfully created user');
+                        }
+                    });
+                } else {
+                    console.log('Email address already exists');
+                }
             }
+            res.json({ message: '/users/create-new-user' });
         });
-
-        connection.query('SELECT * FROM user_table', function (err, rows, fields) {
-            if (err) throw err;
-
-            console.log('Users: ', rows);
-        });
-
-        connection.release();
-
-        res.json({ message: '/users/create-new-user' });
     });
 };
