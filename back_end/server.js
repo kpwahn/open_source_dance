@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 /* ROUTES */
 app.use('/users', require('./routes/users.js'));
+app.use('/authenticate', require('./routes/authenticate.js'));
 app.use(require('./routes/index.js'));
 
 app.listen(port, function() {
