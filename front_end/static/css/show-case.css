@@ -1,0 +1,82 @@
+.showcase {
+  width: 100%;
+  min-height: 1000px;
+  background-image: url("/static/images/lindy_flip.jpg");
+  position: relative;  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.showcase a {
+  display: block;
+  color: #f45c42;
+  font-style: italic;
+}
+
+.imageContent {
+    position: absolute;
+    left: 75%;
+    top: 10%;
+    width: 20%;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.tileContainer {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-around;
+  position: absolute;
+  bottom : 0;
+}
+
+.tileBox {
+  float: left;
+  width: 30%;
+  text-align: center;
+  margin: 70px 10px;
+  line-height: 30px;
+  letter-spacing: .1px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  box-shadow: 5px 5px 2px #888888;
+}
+
+
+p {
+  line-height: 30px;
+  letter-spacing: .1px;
+  font-size: 18px;
+}
+
+.tileBox h1 {
+  font-size: 30px;
+  color: black;
+  background-color: #f44141;
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+  transition: 2s;
+  padding: 10px;
+  box-shadow: 3px 3px 2px #888888;
+}
+
+.tileBox h1:hover {
+  width: 50%;
+}
+
+.contentTitle {
+  display: block;
+  color: red;
+  font-family: Georgia;
+  font-size: 35px;
+  line-height: 40px;
+}

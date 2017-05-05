@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import '../../static/css/highlighter.css';
+import '../../static/css/show-case.css';
 
-class Highlighter extends Component {
+class ShowCase extends Component {
 
   constructor(props) {
     super(props);
@@ -11,8 +11,8 @@ class Highlighter extends Component {
     return (
       <section className="showcase">
           <p className="imageContent">
-            <span className="contentTitle">Dance Rhythm</span>
-              Dance and let Dance. Welcome to the exiciting exclusive dance community.
+            <span className="contentTitle">Open Source Dance</span>
+               Welcome to the exiciting exclusive dance community.
             <a>Know more</a>
           </p>
 
@@ -39,4 +39,4 @@ class Highlighter extends Component {
   }
 }
 
-export default Highlighter;
+export default ShowCase;

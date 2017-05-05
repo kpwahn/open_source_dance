@@ -1,49 +1,42 @@
-header {
-  background-color: #35424a;
-  min-height: 70px;
-  border-bottom: #e8491d 3px solid;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
 }
 
+header {
+  background-color: #464646;
+  min-height: 70px;
+  border-bottom: #da4d49 3px solid;
+}
 
 .header-container {
-  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
   margin: auto;
-  overflow: hidden;
-
+  padding: 30px;
+  height: 150px;
+  box-sizing: border-box;
+  position: relative;
 }
-
-.navbar-fixed-top {
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-}
-
-
 
 .header-title {
-  float: left;
-  padding: 20px;
-  margin: 20px;
-  color: #e8491d;
-  font-weight: bold;
-  font-size: 40px;
-  font-family: "Tangerine",cursive;
-  letter-spacing: 0.2em;
-}
-
-
-.header-elements {
   color: #ffffff;
-  padding: 35px 20px 20px 20px;
-  margin: 20px;
-  float: right;
+  padding: 25px;
 }
 
-.header-userName {
+.header-nav {
+  display: flex;
+  color: white;
 
 }
 
-.header-phoneNumber {
+.header-nav ul {
+  list-style-type: none;
+}
 
+.header-nav li {
+  display: inline-block;
+  padding:25px;
 }

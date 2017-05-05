@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import DanceHeader from './header';
-import Highlighter from './highlighter';
-import KnowMore from './know-more';
+import ShowCase from './show-case';
 import FeatureTiles from './feature-tiles';
 
 export default class App extends Component {
@@ -9,7 +8,7 @@ export default class App extends Component {
     return (
       <div>
         <DanceHeader />
-        <Highlighter />        
+        <ShowCase />
         <FeatureTiles />
       </div>
     );

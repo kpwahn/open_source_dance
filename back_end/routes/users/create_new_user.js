@@ -1,32 +1,43 @@
-var connection = require('../../utils/database-util');
+var connection = require('../../utils/database_util');
+var bcrypt = require('../../utils/bcrypt_util');
+
+//TODO remove console logs and actually have some good error checking/cases
 
 module.exports = function (req, res) {
-    connection.getConnection(function(err, connection){
+    var email = connection.escape(req.body.email);
+    var password = connection.escape(req.body.password);
 
-        // TODO Encrypt the password somehow
-        var email = connection.escape(req.body.email);
-        var password = connection.escape(req.body.password);
-
-        // TODO check for duplicates
-        var sql = 'INSERT INTO user_table (email, password) VALUES (' +
-            email + ', ' + password + ');';
-
-        connection.query(sql, function (err, rows, fields) {
+    bcrypt.encrypt(password,
+        function(err, encryptedPassword) {
             if (err) {
-                console.log("Failed to create new user " + err );
+                console.log('Encryption fail... ' + err);
             } else {
-                console.log('Successfully created user');
+                connection.getConnection(function (err, connection) {
+
+                    var sql = 'SELECT * FROM user_table WHERE email = ' + email + ';';
+
+                    connection.query(sql, function (err, rows, fields) {
+                        if (err) {
+                            console.log('Something went wrong... ' + err);
+                        } else {
+                            if (rows.length == 0) {
+                                sql = 'INSERT INTO user_table (email, password) VALUES (' +
+                                    email + ', "' + encryptedPassword + '");';
+
+                                connection.query(sql, function (err, rows, fields) {
+                                    if (err) {
+                                        console.log('Failed to create new user ' + err);
+                                    } else {
+                                        console.log('Successfully created user');
+                                    }
+                                });
+                            } else {
+                                console.log('Email address already exists');
+                            }
+                        }
+                        res.json({message: '/users/create-new-user'});
+                    });
+                });
             }
-        });
-
-        connection.query('SELECT * FROM user_table', function (err, rows, fields) {
-            if (err) throw err;
-
-            console.log('Users: ', rows);
-        });
-
-        connection.release();
-
-        res.json({ message: '/users/create-new-user' });
-    });
+        })
 };
