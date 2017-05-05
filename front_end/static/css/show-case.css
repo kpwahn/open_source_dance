@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 1000px;
   background-image: url("/static/images/lindy_flip.jpg");
-  position: relative;  
+  position: relative;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -75,7 +75,7 @@ p {
 
 .contentTitle {
   display: block;
-  color: red;
+  color: #f44141;
   font-family: Georgia;
   font-size: 35px;
   line-height: 40px;
