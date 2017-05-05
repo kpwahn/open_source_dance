@@ -3,8 +3,8 @@
   flex-direction: row;
   flex-flow: wrap;
   justify-content: space-around;
-  background-color: #ffcf00;
-
+  position: absolute;
+  bottom : 0;
 }
 
 .tileBox {
@@ -15,7 +15,9 @@
   line-height: 30px;
   letter-spacing: .1px;
   font-size: 18px;
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  box-shadow: 5px 5px 2px #888888;
 }
 
 
@@ -27,16 +29,74 @@ p {
 
 .tileBox h1 {
   font-size: 30px;
-  color: #ffffff;
-  background-color: #ffcf00;
+  color: black;
+  background-color: #f44141;
   width: 70%;
   margin: 20px auto;
   text-align: center;
   transition: 2s;
   padding: 10px;
+  box-shadow: 3px 3px 2px #888888;
 }
 
 .tileBox h1:hover {
   width: 50%;
 
+}
+
+
+.featureTile {
+  background-color: #ffffff;
+  width: 90%;
+  min-height: 350px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.right-box {
+  float: right;
+  width: 50%;
+  padding: 20px;
+  height: auto;
+  box-sizing: border-box;
+
+}
+
+.left-box {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  height: auto;
+  box-sizing: border-box;
+
+}
+
+
+.box-heading h2{
+  color: #444;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  position: relative;
+  margin: 0px 0px 70px 0px;
+  font-size: 24px;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.box-heading h2::after {
+  position: absolute;
+  border: 2px dashed red;
+  bottom: 0;
+  content: "";
+  width: 80%;
+  right: 10%;
+
+}
+
+.image-box{
+  width: 80%;
+  height: 80%;
 }

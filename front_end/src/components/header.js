@@ -11,7 +11,7 @@ class DanceHeader extends Component {
 
     return (
         <header>
-          <div className="header-container">
+          <div className="header-container navbar-fixed-top">
             <h1 className='header-title'> Dance Rhythm </h1>
             <div className='header-elements header-userName'>Venkata Rakesh </div>
             <div className='header-elements header-phoneNumber'>Phone : 111 111 1111 </div>

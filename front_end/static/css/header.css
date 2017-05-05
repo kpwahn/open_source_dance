@@ -1,9 +1,7 @@
 header {
   background-color: #35424a;
-  padding-top: 30px;
   min-height: 70px;
   border-bottom: #e8491d 3px solid;
-  
 }
 
 
@@ -11,6 +9,14 @@ header {
   width: 80%;
   margin: auto;
   overflow: hidden;
+
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 
@@ -22,6 +28,8 @@ header {
   color: #e8491d;
   font-weight: bold;
   font-size: 40px;
+  font-family: "Tangerine",cursive;
+  letter-spacing: 0.2em;
 }
 
 
