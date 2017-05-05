@@ -6,18 +6,18 @@ header {
 
 .header-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 80%;
   margin: auto;
   padding: 30px;
-  height: 150px;
+  height: 100px;
   box-sizing: border-box;
   position: relative;
 }
 
 .header-title {
   color: #ffffff;
-  padding: 10px 25px;
 }
 
 .header-nav {
@@ -27,6 +27,7 @@ header {
 }
 
 .header-nav ul {
+
   list-style: none;
 }
 
