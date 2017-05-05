@@ -16,8 +16,13 @@ class DanceHeader extends Component {
             <nav className="header-nav">
               <ul>
                 <li>Contact Us</li>
-                <li>Login</li>
-              </ul>            
+                <li>
+                  <a className="loginButton"> Login </a>
+                </li>
+                <li>
+                  <a className="signUpButton"> Sign Up </a>
+                </li>
+              </ul>
             </nav>
           </div>
         </header>
