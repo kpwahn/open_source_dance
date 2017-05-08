@@ -1,6 +1,6 @@
 .showcase {
   width: 100%;
-  min-height: 1000px;
+  min-height: 700px;
   background-image: url("/static/images/lindy_flip.jpg");
   position: relative;
   background-attachment: fixed;
@@ -10,73 +10,109 @@
   text-align: center;
 }
 
+.showcase .imageContent {
+  position: absolute;
+  left: 15%;
+  top: 55%;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: .1px;
+}
+
 .showcase a {
   display: block;
   color: #f45c42;
   font-style: italic;
-}
-
-.imageContent {
-    position: absolute;
-    left: 75%;
-    top: 10%;
-    width: 20%;
-    text-align: center;
-    color: #fff;
-    display: inline-block;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.tileContainer {
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
-  justify-content: space-around;
-  position: absolute;
-  bottom : 0;
-}
-
-.tileBox {
-  float: left;
-  width: 30%;
-  text-align: center;
-  margin: 70px 10px;
-  line-height: 30px;
-  letter-spacing: .1px;
-  font-size: 18px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  box-shadow: 5px 5px 2px #888888;
-}
-
-
-p {
-  line-height: 30px;
-  letter-spacing: .1px;
-  font-size: 18px;
-}
-
-.tileBox h1 {
-  font-size: 30px;
-  color: black;
-  background-color: #f44141;
-  width: 70%;
-  margin: 20px auto;
-  text-align: center;
-  transition: 2s;
-  padding: 10px;
-  box-shadow: 3px 3px 2px #888888;
-}
-
-.tileBox h1:hover {
-  width: 50%;
+  cursor: pointer;
 }
 
 .contentTitle {
   display: block;
   color: #f44141;
   font-family: Georgia;
-  font-size: 35px;
-  line-height: 40px;
+  font-size: 25px;
+  line-height: 20px;
+}
+
+.tileContainer, .tileBox {
+  display: none;
+}
+
+@media only screen and (min-width:1024px) {
+
+  .tileContainer, .tileBox {
+    display: inline;
+  }
+
+  .showcase {
+    min-height: 1000px;
+  }
+
+  .showcase .imageContent {
+    left: 75%;
+    top: 10%;
+    width: 20%;
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .contentTitle {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  .tileContainer {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-around;
+    position: absolute;
+    bottom : 0;
+  }
+
+
+  .tileContainer {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-around;
+    position: absolute;
+    bottom : 0;
+  }
+
+  .tileBox {
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin: 70px 10px;
+    line-height: 30px;
+    letter-spacing: .1px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 5px 5px 2px #888888;
+  }
+
+
+  .tileBox h1 {
+    font-size: 30px;
+    color: black;
+    background-color: #f44141;
+    width: 70%;
+    margin: 20px auto;
+    text-align: center;
+    transition: 2s;
+    padding: 10px;
+    box-shadow: 3px 3px 2px #888888;
+  }
+
+  .tileBox h1:hover {
+    width: 50%;
+  }
+
+
 }
