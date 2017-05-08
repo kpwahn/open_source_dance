@@ -10,7 +10,7 @@ class DanceHeader extends Component {
   render() {
 
     return (
-        <header className="header">
+        <header>
           <div className="header-container">
             <h1 className='header-title'> Open Source Dance </h1>
             <nav className="header-nav">

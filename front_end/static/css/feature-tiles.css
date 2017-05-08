@@ -5,12 +5,12 @@
   display: block;
 }
 
-.right-box {
+.text-content {
   margin: 40px 0;
   text-align: center;
 }
 
-.box-heading h2{
+.text-content h2{
   color: #444;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -20,21 +20,19 @@
   font-size: 20px;
   font-family: Montserrat;
   text-transform: uppercase;
-  position: relative;
   padding-bottom: 20px;
 }
 
-.box-heading h2::after {
+.text-content h2::after {
   position: absolute;
   border: 1px dashed red;
   bottom: 0;
   content: "";
   width: 80%;
   right: 10%;
-
 }
 
-.image-box{
+.image img{
   width: 90%;
   height: 100px;;
 }
@@ -44,46 +42,54 @@
 
   .featureTile {
     background-color: #ffffff;
-    width: 90%;
+    width: 95%;
     min-height: 350px;
     margin: 40px auto;
     overflow: hidden;
   }
 
-  .right-box {
+  .feature-tiles div:nth-child(odd) .text-content {
     float: right;
     width: 50%;
     padding: 20px;
     height: auto;
     box-sizing: border-box;
-
   }
 
-  .left-box {
+  .feature-tiles div:nth-child(odd) .image {
     float: left;
     width: 50%;
     padding: 20px;
     height: auto;
     box-sizing: border-box;
-
   }
 
 
-  .box-heading h2{
-    color: #444;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    display: inline-block;
+  .feature-tiles div:nth-child(even) .text-content {
+    float: left;
+    width: 50%;
+    padding: 20px;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .feature-tiles div:nth-child(even) .image {
+    float: right;
+    width: 50%;
+    padding: 20px;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .text-content h2{
     position: relative;
     margin: 0px 0px 70px 0px;
-    font-size: 24px;
-    font-family: Montserrat;
-    text-transform: uppercase;
-    position: relative;
+    font-size: 25px;
     padding-bottom: 20px;
+    text-align: left;
   }
 
-  .box-heading h2::after {
+  .text-content h2::after {
     position: absolute;
     border: 2px dashed red;
     bottom: 0;
@@ -93,9 +99,11 @@
 
   }
 
-  .image-box{
+  .image img{
     width: 80%;
     height: 80%;
+    display: block;
+    margin: auto;
   }
 
 }

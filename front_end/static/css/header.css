@@ -1,7 +1,16 @@
-.header {
+body{
+  margin: 0;
+}
+
+header {
   background-color: #464646;
   min-height: 70px;
   border-bottom: #da4d49 3px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  width: 100%;
 }
 
 .header-container {

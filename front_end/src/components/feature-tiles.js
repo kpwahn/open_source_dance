@@ -9,44 +9,36 @@ class FeatureTiles extends Component {
 
   render() {
     return (
-      <div>
+      <div className = "feature-tiles">
           <div className="featureTile">
-            <div className= "right-box">
-              <div className="box-heading">
-                <h2>Heading</h2>
-               </div>
-              <div className="box-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis nibh, at maximus ipsum finibus id. Pellentesque faucibus justo eget posuere placerat. Sed vel pharetra lectus, eget mattis ante. Nullam at ex a est finibus eleifend vel egestas erat. Sed fermentum tristique bibendum. Duis lacinia neque eu massa tincidunt varius.</div>
+            <div className= "text-content">
+                <h2 className="text-content-heading">Heading</h2>
+                <div className="text-content-article"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis nibh, at maximus ipsum finibus id. Pellentesque faucibus justo eget posuere placerat. Sed vel pharetra lectus, eget mattis ante. Nullam at ex a est finibus eleifend vel egestas erat. Sed fermentum tristique bibendum. Duis lacinia neque eu massa tincidunt varius.</div>
             </div>
-            <div className= "left-box">
-              <img className="image-box" src="/static/images/lindy_flip.jpg" />
+            <div className= "image">
+              <img className="image-content" src="/static/images/lindy_flip.jpg" />
             </div>
           </div>
 
           <div className="featureTile">
-            <div className= "right-box">
-              <div className="box-heading">
-                <h2>Heading</h2>
-               </div>
-              <div className="box-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis nibh, at maximus ipsum finibus id. Pellentesque faucibus justo eget posuere placerat. Sed vel pharetra lectus, eget mattis ante. Nullam at ex a est finibus eleifend vel egestas erat. Sed fermentum tristique bibendum. Duis lacinia neque eu massa tincidunt varius.</div>
+            <div className= "text-content">
+                <h2 className="text-content-heading">Heading</h2>
+                <div className="text-content-article"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis nibh, at maximus ipsum finibus id. Pellentesque faucibus justo eget posuere placerat. Sed vel pharetra lectus, eget mattis ante. Nullam at ex a est finibus eleifend vel egestas erat. Sed fermentum tristique bibendum. Duis lacinia neque eu massa tincidunt varius.</div>
             </div>
-            <div className= "left-box">
-              <img className="image-box" src="/static/images/lindy_flip.jpg" />
+            <div className= "image">
+              <img className="image-content" src="/static/images/lindy_flip.jpg" />
             </div>
           </div>
-
 
           <div className="featureTile">
-            <div className= "right-box">
-              <div className="box-heading">
-                <h2>Heading</h2>
-               </div>
-              <div className="box-text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis nibh, at maximus ipsum finibus id. Pellentesque faucibus justo eget posuere placerat. Sed vel pharetra lectus, eget mattis ante. Nullam at ex a est finibus eleifend vel egestas erat. Sed fermentum tristique bibendum. Duis lacinia neque eu massa tincidunt varius.</div>
+            <div className= "text-content">
+                <h2 className="text-content-heading">Heading</h2>
+                <div className="text-content-article"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada felis nibh, at maximus ipsum finibus id. Pellentesque faucibus justo eget posuere placerat. Sed vel pharetra lectus, eget mattis ante. Nullam at ex a est finibus eleifend vel egestas erat. Sed fermentum tristique bibendum. Duis lacinia neque eu massa tincidunt varius.</div>
             </div>
-            <div className= "left-box">
-              <img className="image-box" src="/static/images/lindy_flip.jpg" />
+            <div className= "image">
+              <img className="image-content" src="/static/images/lindy_flip.jpg" />
             </div>
           </div>
-
 
       </div>
     );
