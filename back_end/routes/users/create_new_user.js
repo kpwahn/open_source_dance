@@ -1,5 +1,5 @@
 var connection = require('../../utils/database_util');
-var bcrypt = require('../../utils/bcrypt_util');
+var bcrypt_util = require('../../utils/bcrypt_util');
 
 //TODO remove console logs and actually have some good error checking/cases
 
@@ -7,10 +7,10 @@ module.exports = function (req, res) {
     var email = connection.escape(req.body.email);
     var password = connection.escape(req.body.password);
 
-    bcrypt.encrypt(password,
+    bcrypt_util.encrypt(password,
         function(err, encryptedPassword) {
             if (err) {
-                console.log('Encryption fail... ' + err);
+                console.log('Encryption failed... ' + err);
             } else {
                 connection.getConnection(function (err, connection) {
 

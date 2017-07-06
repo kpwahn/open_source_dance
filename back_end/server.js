@@ -15,5 +15,5 @@ app.use('/authenticate', require('./routes/authentication/authenticate.js'));
 app.use(require('./routes/index.js'));
 
 app.listen(port, function() {
-    console.log('api running no port ' + port);
+    console.log('api running on port ' + port);
 });

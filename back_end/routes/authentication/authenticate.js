@@ -1,8 +1,8 @@
 var router = require('express').Router();
-var auth = require('../../utils/autenticate_util');
+var auth_util = require('../../utils/autenticate_util');
 
 router.post('/', function(req, res) {
-    auth.authenticate(req, function(err, isAuthenticated){
+    auth_util.authenticate(req, function(err, isAuthenticated){
         if(err) {
             res.json({ message: err });
         } else if (isAuthenticated){
@@ -14,3 +14,9 @@ router.post('/', function(req, res) {
 });
 
 module.exports = router;
+
+/*
+auth_util.authenticate - returns an err, true or false
+
+
+ */

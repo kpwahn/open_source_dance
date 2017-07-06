@@ -15,8 +15,11 @@ module.exports = {
     },
 
     compare: function(myPlaintextPassword, email, callback) {
+        escapedEmail = connection.escape(email);
+        escapedPassword = connection.escape(myPlaintextPassword);
+
         connection.getConnection(function (err, connection) {
-            var sql = 'SELECT password FROM user_table WHERE email = ' + email + ';';
+            var sql = 'SELECT password FROM user_table WHERE email = ' + escapedEmail + ';';
 
             connection.query(sql, function (err, rows) {
                 if (err) {
@@ -24,7 +27,7 @@ module.exports = {
                 } else if (rows.length == 1) {
                     var hash = rows[0].password;
 
-                    bcrypt.compare(myPlaintextPassword, hash, function (err, res) {
+                    bcrypt.compare(escapedPassword, hash, function (err, res) {
                         if (err) {
                             callback(err, false);
                         } else {
@@ -32,7 +35,11 @@ module.exports = {
                         }
                     });
                 } else {
-                    callback("Incorrect email or password", false);
+                    if (rows.length == 0) {
+                        callback("Email not found", false);
+                    } else {
+                        callback("Incorrect email or password", false);
+                    }
                 }
             });
         });

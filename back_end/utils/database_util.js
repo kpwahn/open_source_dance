@@ -7,6 +7,4 @@ var connection = mysql.createPool({     // TODO export credentials to one place,
     database : 'open_source_dance'
 });
 
-
-
 module.exports = connection;
