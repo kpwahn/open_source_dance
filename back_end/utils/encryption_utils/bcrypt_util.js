@@ -1,11 +1,12 @@
-var connection = require('../utils/database_util');
+var connection = require('../database_utils/database_connection');
 var bcrypt = require('bcrypt');
+
 // TODO pull saltRounds from server
 const saltRounds = 10;
 
 module.exports = {
-    encrypt: function(myPlaintextPassword, callback) {
-        bcrypt.hash(myPlaintextPassword, saltRounds, function (err, hash) {
+    encrypt: function(plainText, callback) {
+        bcrypt.hash(plainText, saltRounds, function (err, hash) {
             if (err) {
                 callback(err, null);
             } else {

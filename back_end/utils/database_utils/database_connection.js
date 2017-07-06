@@ -1,6 +1,7 @@
 var mysql = require('mysql');
 
-var connection = mysql.createPool({     // TODO export credentials to one place, and pull from server!!
+// TODO export credentials to one place, and pull from server!!
+var connection = mysql.createPool({
     host     : 'localhost',
     user     : 'root',
     password : 'root',

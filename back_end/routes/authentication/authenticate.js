@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var auth_util = require('../../utils/autenticate_util');
+var auth_util = require('../../utils/authentication_utils/autenticate_util');
 
 router.post('/', function(req, res) {
     auth_util.authenticate(req, function(err, isAuthenticated){

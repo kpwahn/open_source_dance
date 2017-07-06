@@ -1,5 +1,5 @@
-var connection = require('../utils/database_util');
-var bcrypt_util = require('../utils/bcrypt_util');
+var connection = require('../database_utils/database_connection');
+var bcrypt_util = require('../encryption_utils/bcrypt_util');
 var jwt    = require('jsonwebtoken');
 
 exports.authenticate = function(req, callback) {

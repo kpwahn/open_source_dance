@@ -1,11 +1,5 @@
 front_end/node_modules
-front_end/bundle.js
-front_end/npm-debug.log
-front_end/.DS_Store
-
 back_end/node_modules
-back_end/npm-debug.log
-back_end/.DS_Store
 
 # IntelliJ
 *.iml

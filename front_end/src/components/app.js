@@ -8,8 +8,10 @@ export default class App extends Component {
     return (
       <div>
         <DanceHeader />
-        <ShowCase />
-        <FeatureTiles />
+          <div className="row">
+            <ShowCase />
+            <FeatureTiles />
+          </div>
       </div>
     );
   }
