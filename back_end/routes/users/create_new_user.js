@@ -10,7 +10,7 @@ module.exports = function (req, res) {
     var request_check = post_request_util.checkReqBody(req, ['email', 'password']);
 
     if( !request_check.has_correct_keys ){
-        // SET HEADER
+        res.status(400);
         res.json(request);
     } else {
 
