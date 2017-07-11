@@ -1,7 +1,8 @@
+var sql = require('../../utils/database_utils/sql_helper_functions');
+
 module.exports = {
     checkReqBody: function(req, expected_keys){
-        var response = {
-            is_sanitized: false,                      // CREATE A BRAND NEW REQUEST OBJECT????????
+        let response = {
             has_correct_keys: true,
             missing_keys: []
         };
@@ -14,5 +15,14 @@ module.exports = {
         });
 
         return response;
+    },
+    escapeBody: function(body){
+        let escaped_body = {};
+
+        Object.keys(body).forEach(function(key){
+             escaped_body[key] = sql.escape(body[key]);
+        });
+
+        return escaped_body;
     }
 }

@@ -1,50 +1,48 @@
-var connection = require('../../utils/database_utils/database_connection');
-var bcrypt_util = require('../../utils/encryption_utils/bcrypt_util');
-var sql = require('../../utils/database_utils/sql_helper_functions');
-var sql_statements = require('../../utils/database_utils/sql_statements');
-var post_request_util = require('../../utils/request_utils/post_request_util');
-
-//TODO remove comments and actually have some good error checking/cases
+let connection = require('../../utils/database_utils/database_connection');
+let bcrypt_util = require('../../utils/encryption_utils/bcrypt_util');
+let sql_statements = require('../../utils/database_utils/sql_statements');
+let post_request_util = require('../../utils/request_utils/post_request_util');
+let status_codes = require('../../utils/request_utils/status_codes');
+let messages = require('../../utils/constants');
 
 module.exports = function (req, res) {
     var request_check = post_request_util.checkReqBody(req, ['email', 'password']);
 
     if( !request_check.has_correct_keys ){
-        res.status(400);
-        res.json(request);
+        res.status(status_codes.bad_request);
+        res.json({missing_keys: request_check.missing_keys});
     } else {
-
-        var email = sql.escape(req.body.email);
-        var password = sql.escape(req.body.password);
-
-        bcrypt_util.encrypt(password, function (err, encryptedPassword) {
+        // 1. ENCRYPT THE PASSWORD
+        bcrypt_util.encrypt(req.body.password, function (err, encryptedPassword) {
             if (err) {
-                // COULD NOT ENCRYPT PASSWORD
-                console.log(err);
+                res.status(status_codes.internal_server_error);
+                res.json({ message: messages.error_messages.encrypt, err: err});
             } else {
                 connection.getConnection(function (err, connection) {
                     if (err) {
-                        // COULD NOT ESTABLISH CONNECTION TO THE DB
-                        console.log(err);
+                        res.status(status_codes.internal_server_error);
+                        res.json({ message: messages.error_messages.db_connect, err: err});
                     } else {
-                        connection.query(sql_statements.select_email(email), function (err, rows) {
+                        // 2. CHECK IF EMAIL ALREADY EXISTS
+                        connection.query(sql_statements.select_email, [req.body.email], function (err, rows) {
                             if (err) {
-                                // COULD NOT QUERY DATABASE
-                                console.log(err);
+                                res.status(status_codes.internal_server_error);
+                                res.json({ message: messages.error_messages.db_query, err: err});
                             } else {
                                 if (rows.length == 0) {
-                                    connection.query(sql_statements.insert_email(email, encryptedPassword), function (err, rows) {
+                                    // 3. INSERT EMAIL/PASSWORD INTO THE DATABASE
+                                    connection.query(sql_statements.insert_email, [req.body.email, encryptedPassword], function (err, rows) {
                                         if (err) {
-                                            // COULD NOT QUERY DATABASE
-                                            console.log(err);
+                                            res.status(status_codes.internal_server_error);
+                                            res.json({ message: messages.error_messages.db_query, err: err});
                                         } else {
-                                            // EMAIL AND PASSWORD WERE SUCCESSFULLY INSERTED
-                                            res.json({});
+                                            res.status(status_codes.ok);
+                                            res.json({ message: messages.success_messages.new_user, err: err});
                                         }
                                     });
                                 } else {
-                                    // RESPONSE FROM DATABASE WAS AN EMPTY ARRAY
-                                    console.log('Email address already exists');
+                                    res.status(status_codes.conflict);
+                                    res.json({ message: messages.error_messages.duplicate, err: err});
                                 }
                             }
                         });
