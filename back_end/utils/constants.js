@@ -1,4 +1,6 @@
 module.exports = {
+    secret: 'secret',
+    jwt_expires_in: '1m',
     error_messages: {
         encrypt: "Could not encrypt password",
         db_connect: "Could not establish connection to the database",

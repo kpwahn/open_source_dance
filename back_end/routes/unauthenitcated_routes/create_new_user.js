@@ -1,11 +1,13 @@
+let router = require('express').Router();
 let connection = require('../../utils/database_utils/database_connection');
 let bcrypt_util = require('../../utils/encryption_utils/bcrypt_util');
 let sql_statements = require('../../utils/database_utils/sql_statements');
 let post_request_util = require('../../utils/request_utils/post_request_util');
 let status_codes = require('../../utils/request_utils/status_codes');
 let messages = require('../../utils/constants');
+let bodyParser = require('body-parser');
 
-module.exports = function (req, res) {
+router.post('/', bodyParser.json(), function (req, res) {
     var request_check = post_request_util.checkReqBody(req, ['email', 'password']);
 
     if( !request_check.has_correct_keys ){
@@ -51,4 +53,6 @@ module.exports = function (req, res) {
             }
         })
     }
-};
+});
+
+module.exports = router;

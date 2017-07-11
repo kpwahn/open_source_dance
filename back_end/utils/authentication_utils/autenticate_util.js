@@ -1,5 +1,5 @@
 let bcrypt_util = require('../encryption_utils/bcrypt_util');
-let messages = require('../constants');
+let constants = require('../constants');
 let jwt = require('jsonwebtoken');
 
 exports.authenticate = function(req, callback) {
@@ -7,12 +7,12 @@ exports.authenticate = function(req, callback) {
         if (err) {
             callback(err, false);
         } else if (res) {
-            var token = jwt.sign({}, 'secret', {
-                expiresIn : '1h'
+            var token = jwt.sign({email: req.body.email}, constants.secret, {
+                expiresIn : constants.jwt_expires_in
             });
-            callback(null, {message: messages.success_messages.authenticated, token: token});
+            callback(null, {message: constants.success_messages.authenticated, token: token});
         } else {
-            callback({"message": messages.error_messages.invalid_email_or_password}, false);
+            callback({"message": cosntants.error_messages.invalid_email_or_password}, false);
         }
     })
 };
